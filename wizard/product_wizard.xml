@@ -15,7 +15,6 @@
                         <field name="sale_ok"/>
                         <field name="purchase_ok"/>
                         <field name="default_code"/>
-                        <field name="barcode"/>
                         <field name="manufacturer_id" required="True"/>
                         <field name='model_id' required="True" domain="[('manufacturer_id', '=', manufacturer_id)]" options="{'no_quick_create':True,'no_create_edit':True}"/>
                     </group>

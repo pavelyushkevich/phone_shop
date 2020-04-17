@@ -9,7 +9,6 @@ class ProductTemplateWizard(models.TransientModel):
     sale_ok = fields.Boolean('Can be Sold', default=True)
     purchase_ok = fields.Boolean('Can be Purchased', default=True)
     default_code = fields.Char('Internal Reference')
-    barcode = fields.Char('Barcode')
     manufacturer_id = fields.Many2one('sale.manufacturer')
     model_id = fields.Many2one('sale.manufacturer.model')
     image_medium = fields.Binary("Medium-sized image", attachment=True)
@@ -43,7 +42,6 @@ class ProductTemplateWizard(models.TransientModel):
             'sale_ok': self.sale_ok,
             'purchase_ok': self.purchase_ok,
             'default_code': self.default_code,
-            'barcode': self.barcode,
             'manufacturer_id': self.manufacturer_id.id,
             'model_id': self.model_id.id,
             'image_medium': self.image_medium,
