@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="manufacturers_config_tree_view" model="ir.ui.view">
+            <field name="name">manufacturers.config.tree.view</field>
+            <field name="model">sale.manufacturer</field>
+            <field name="arch" type="xml">
+                <tree string="Manufacturers">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="manufacturers_config_form_view" model="ir.ui.view">
+            <field name="name">manufacturers.config.form.view</field>
+            <field name="model">sale.manufacturer</field>
+            <field name="arch" type="xml">
+                <form string="Manufacturers">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="models_config_tree_view" model="ir.ui.view">
+            <field name="name">models.config.tree.view</field>
+            <field name="model">sale.manufacturer.model</field>
+            <field name="arch" type="xml">
+                <tree string="Manufacturers">
+                    <field name="name"/>
+                    <field name="manufacturer_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="models_config_form_view" model="ir.ui.view">
+            <field name="name">models.config.form.view</field>
+            <field name="model">sale.manufacturer.model</field>
+            <field name="arch" type="xml">
+                <form string="Manufacturers">
+                    <group>
+                        <field name="name"/>
+                        <field name="manufacturer_id"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

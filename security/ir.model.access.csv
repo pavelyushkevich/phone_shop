@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_manufacturer_user,ManufacturerUser,model_sale_manufacturer,,1,0,0,0
+access_manufacturer_manager,ManufacturerManager,model_sale_manufacturer,,1,1,1,1
+access_manufacturer_model_user,ManufacturerModelUser,model_sale_manufacturer_model,,1,0,0,0
+access_manufacturer_model_manager,ManufacturerModelManager,model_sale_manufacturer_model,,1,1,1,1

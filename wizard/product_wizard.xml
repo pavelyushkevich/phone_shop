@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_template_wizard_view" model="ir.ui.view">
+            <field name="name">product.template.wizard.view</field>
+            <field name="model">product.template.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Product Wizard">
+                    <field name="state" invisible="1"/>
+                    <group states="step1">
+                        <field name="name"/>
+                        <field name="type"/>
+                        <field name="categ_id"/>
+                        <field name="sale_ok"/>
+                        <field name="purchase_ok"/>
+                        <field name="default_code"/>
+                        <field name="barcode"/>
+                        <field name="manufacturer_id" required="True"/>
+                        <field name='model_id' required="True" domain="[('manufacturer_id', '=', manufacturer_id)]" options="{'no_quick_create':True,'no_create_edit':True}"/>
+                    </group>
+                    <group states="step2">
+                        <field name="image_medium"/>
+                    </group>
+
+                    <group states="step1">
+                        <label for="change_step" string="Next" class="btn btn-sm btn-primary"/>
+                        <field name="change_step" invisible="1"/>
+                    </group>
+
+                    <group states="step2">
+                        <label for="change_step" string="Previous" class="btn btn-sm btn-primary"/>
+                        <field name="change_step" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button name="create_product" string="Save" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_product_template_wizard" model="ir.actions.act_window">
+            <field name="name">Quick Create Product</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.template.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="product_template_wizard_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="product_template_wizard"    
+            name="Quick Create Product"
+            parent="sale.product_menu_catalog"
+            action="action_product_template_wizard"
+            sequence="4"/>
+    </data>
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_manufacturers_config" model="ir.actions.act_window">
+            <field name="name">Manufacturers</field>
+            <field name="res_model">sale.manufacturer</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="manufacturers_config"    
+            name="Manufacturers"
+            parent="sale.menu_sale_config"
+            action="action_manufacturers_config"
+            sequence="3"/>
+
+        <record id="action_models_config" model="ir.actions.act_window">
+            <field name="name">Models</field>
+            <field name="res_model">sale.manufacturer.model</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="models_config"    
+            name="Models"
+            parent="sale.menu_sale_config"
+            action="action_models_config"
+            sequence="4"/>
+    </data>
+</odoo>
